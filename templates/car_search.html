@@ -46,25 +46,42 @@
 <div class="nav">
 {#    <a class="bt" onclick="play()">上传视频</a>#}
 {#    <input type="file" opacity: 0; accept="vedio/*" value="上传视频" onclick="play()" class="bt">#}
-    <input id="myfile" value="上传视频" type="file" accept="video/*" onchange="loadfile()" class="bt">
-<div id="content" width="2500" height="1336" class="vp"></div>
-<script>
-    var myfile=document.getElementById('myfile');
-    var fReader=new FileReader();
-    var con=document.getElementById('content');
+    <input id="myVfile" name="上传视频" type="file" accept="video/*" onchange="loadVfile()" class="bt">
+    <input id="myIfile" name="上传图片" type="file" accept="image/*" onchange="loadIfile()" class="bt">
+       <a href="/take/poto">打开摄像头</a>
+    <a href="#">输入车牌号</a>
+    <a href="/">回到主页</a>
+<div id="Vcontent" ></div>
+    <div id="Icontent" ></div>
 
-    fReader.onload=function (e){
-        var str='<video src="'+e.target.result+'">';
+<script>
+    var myVfile=document.getElementById('myVfile');
+    var fVReader=new FileReader();
+    var Vcon=document.getElementById('Vcontent');
+
+    fVReader.onload=function (e){
+        var str='<video controls width="2500" height="1336" class="vp" src="'+e.target.result+'">';
         con.innerHTML+= str;
     }
-    function loadfile(){
-        fReader.readAsDataURL(myfile.files[0]);
+    function loadVfile(){
+        fVReader.readAsDataURL(myVfile.files[0]);
     }
 </script>
 
-    <a href="/take/poto">打开摄像头</a>
-    <a href="#">输入车牌号</a>
-    <a href="/">回到主页</a>
+<script>
+    var myIfile=document.getElementById('myIfile');
+    var fIReader=new FileReader();
+    var con=document.getElementById('Icontent');
+
+    fIReader.onload=function (e){
+        var str='<img width="2500" height="1336" class="vp" src="'+e.target.result+'">';
+        con.innerHTML+= str;
+    }
+    function loadIfile(){
+        fIReader.readAsDataURL(myIfile.files[0]);
+    }
+</script>
+
 </div>
 
 {#<input id="v_file" type="button" onclick="play()"/>#}
