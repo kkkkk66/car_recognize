@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>car_search</title>
+</head>
+
+<style>
+     body{
+        background: url(/static/images/pexels-dexter-fernandes-2646237.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+  .nav a{
+        display: inline-block;
+        height: 80px;
+        font-size: 50px;
+         text-decoration: none;
+        padding: 0 50px;
+        color: white;
+    }
+    .nav a:hover{
+        background-color: chartreuse;
+    }
+    .tb{
+        color: white;
+        font-size: 60px;
+        border-color: chartreuse;
+    }
+    .vp{
+        position: relative;
+        left: 620px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .bt{
+        size: auto;
+        font-size: 60px;
+    }
+</style>
+
+<body>
+
+
+<div class="nav">
+{#    <a class="bt" onclick="play()">上传视频</a>#}
+{#    <input type="file" opacity: 0; accept="vedio/*" value="上传视频" onclick="play()" class="bt">#}
+    <input id="myfile" value="上传视频" type="file" accept="video/*" onchange="loadfile()" class="bt">
+<div id="content" width="2500" height="1336" class="vp"></div>
+<script>
+    var myfile=document.getElementById('myfile');
+    var fReader=new FileReader();
+    var con=document.getElementById('content');
+
+    fReader.onload=function (e){
+        var str='<video src="'+e.target.result+'">';
+        con.innerHTML+= str;
+    }
+    function loadfile(){
+        fReader.readAsDataURL(myfile.files[0]);
+    }
+</script>
+
+    <a href="/take/poto">打开摄像头</a>
+    <a href="#">输入车牌号</a>
+    <a href="/">回到主页</a>
+</div>
+
+{#<input id="v_file" type="button" onclick="play()"/>#}
+{#<button onclick="play()">上传视频</button>#}
+{#<video id="video" controls="controls" width="2500px" height="1340" class="vp">#}
+{#    你的浏览器貌似不支持video 元素 %>_<%#}
+{#    <source src="/vedio/first~1.mp4" controls width="2500" height="1336" class="vp">>#}
+{#</video>#}
+{##}
+
+
+{#<video controls width="2500" height="1336" class="vp">#}
+{#    <source src = "/video/first~1.mp4"; type="video">#}
+{#  <p>你的浏览器不支持 HTML5 视频。可点击<a href="rabbit320.mp4">此链接</a>观看</p>#}
+{#</video>#}
+
+
+<table align="center" width="2500" height="100" border="1" cellspacing="0" class="tb">
+    <tr>
+        <th>视频名称</th>
+        <th>出现的车牌号</th>
+        <th>出现的时间</th>
+    </tr>
+</table>
+</body>
+</html>
+
+{#<script>#}
+{#    function play(){#}
+{#        var file = document.getElementById('vedio').files[0];#}
+{#        var url = URL.createObjectURL(file);#}
+{#        console.log(url);#}
+{#       	document.querySelector('#video').src = url;#}
+{#    }#}
+{##}
+{#</script>#}

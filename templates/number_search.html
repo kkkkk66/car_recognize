@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>number_search</title>
+</head>
+<style>
+    body{
+        background: url(/static/images/pexels-life-of-pix-8892.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+    }
+    .nav a{
+        display: inline-block;
+        height: 80px;
+        font-size: 50px;
+         text-decoration: none;
+        padding: 0 50px;
+        color: white;
+    }
+    .nav a:hover{
+        background-color: chartreuse;
+    }
+    .tb{
+        color: white;
+        font-size: 60px;
+        border-color: chartreuse;
+    }
+    .vp{
+        position: relative;
+        left: 620px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+</style>
+<body>
+<div class="nav">
+    <a href="#">上传视频</a>
+    <a href="#">打开摄像头</a>
+     <a href="#">输入车牌号</a>
+    <a href="/">回到主页</a>
+</div>
+<video controls width="2500" height="1336" class="vp">
+    <source src="/vedio/first~1.mp4">
+  <p>你的浏览器不支持 HTML5 视频。可点击<a href="rabbit320.mp4">此链接</a>观看</p>
+</video>
+<table align="center" width="2500" height="100" border="1" cellspacing="0" class="tb">
+    <tr>
+        <th>视频名称</th>
+        <th>出现的车牌号</th>
+        <th>出现的时间</th>
+    </tr>
+</table>
+</body>
+</html>
